@@ -1,0 +1,35 @@
+
+//Creating database
+## sudo -i -u postgres psql
+create role hakase_dev with createdb login password 'hakasepass';
+//Viewing all users
+## \du
+//creating rails app
+## rails new hakaseapp -d postgresql
+
+
+
+
+
+
+
+
+
+
+## To install devise gem
+rails generate devise:install
+
+## To create all devise html files
+rails g devise:views
+
+## To create model for using database
+rails generate devise users
+rails db:migrate
+
+
+
+
+## adding data to table
+
+rails g migration add_user_id_to_friends user_id:integer:index                   //add a column user_id to friends table
+rails db:migrate
